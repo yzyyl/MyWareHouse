@@ -106,23 +106,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         restartBotton();
         switch (v.getId()) {
             case R.id.ll_search:
-                iv_search.setImageResource(R.drawable.iv_search_bg);
                 iv_search.setSelected(true);
-                tv_search.setTextColor(this.getResources().getColorStateList(R.color.tv_search_bg));
                 tv_search.setSelected(true);
                 viewPager.setCurrentItem(0);
                 break;
             case R.id.ll_shoppingmall:
-                iv_shoppingmall.setImageResource(R.drawable.iv_shoppingmall_bg);
                 iv_shoppingmall.setSelected(true);
-                tv_shoppingmall.setTextColor(this.getResources().getColorStateList(R.color.tv_search_bg));
                 tv_shoppingmall.setSelected(true);
                 viewPager.setCurrentItem(1);
                 break;
             case R.id.ll_my:
-                iv_my.setImageResource(R.drawable.iv_my_bg);
                 iv_my.setSelected(true);
-                tv_my.setTextColor(this.getResources().getColorStateList(R.color.tv_search_bg));
                 tv_my.setSelected(true);
                 viewPager.setCurrentItem(2);
                 Intent intent=new Intent(MainActivity.this,MyCenterActivity.class);
@@ -135,26 +129,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //设置搜一搜为默认选中
     private void searchRestart() {
-        iv_search.setImageResource(R.drawable.iv_search_bg);
         iv_search.setSelected(true);
-        tv_search.setTextColor(this.getResources().getColorStateList(R.color.tv_search_bg));
         tv_search.setSelected(true);
     }
 
     //将图片和文字设置为初始默认颜色
     private void restartBotton() {
-        iv_search.setImageResource(R.drawable.iv_search_bg);
         iv_search.setSelected(false);
-        iv_shoppingmall.setImageResource(R.drawable.iv_shoppingmall_bg);
         iv_shoppingmall.setSelected(false);
-        iv_my.setImageResource(R.drawable.iv_my_bg);
         iv_my.setSelected(false);
 
-        tv_search.setTextColor(this.getResources().getColorStateList(R.color.tv_search_bg));
         tv_search.setSelected(false);
-        tv_shoppingmall.setTextColor(this.getResources().getColorStateList(R.color.tv_search_bg));
         tv_shoppingmall.setSelected(false);
-        tv_my.setTextColor(this.getResources().getColorStateList(R.color.tv_search_bg));
         tv_my.setSelected(false);
 
 
@@ -196,21 +182,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //当前view被选择的时候,改变底部菜单图片，文字颜色
         switch (position) {
             case 0:
-                iv_search.setImageResource(R.drawable.iv_search_bg);
                 iv_search.setSelected(true);
-                tv_search.setTextColor(this.getResources().getColorStateList(R.color.tv_search_bg));
                 tv_search.setSelected(true);
                 break;
             case 1:
-                iv_shoppingmall.setImageResource(R.drawable.iv_shoppingmall_bg);
                 iv_shoppingmall.setSelected(true);
-                tv_shoppingmall.setTextColor(this.getResources().getColorStateList(R.color.tv_search_bg));
                 tv_shoppingmall.setSelected(true);
                 break;
             case 2:
-                iv_my.setImageResource(R.drawable.iv_my_bg);
                 iv_my.setSelected(true);
-                tv_my.setTextColor(this.getResources().getColorStateList(R.color.tv_search_bg));
                 tv_my.setSelected(true);
                 break;
 
