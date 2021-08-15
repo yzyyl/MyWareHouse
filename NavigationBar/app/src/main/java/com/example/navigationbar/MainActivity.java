@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView tv_search;
     private TextView tv_shoppingmall;
     private TextView tv_my;
+
+    //搜一搜输入框
+    private  TextView tv_search_input;
     //中间内容区域
     private ViewPager viewPager;
     //viewpager适配器
@@ -67,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ll_shoppingmall.setOnClickListener(this);
         ll_my.setOnClickListener(this);
         tv_search.setOnClickListener(this);
+        tv_search_input.setOnClickListener(this);
         //viewpager滑动监听
         viewPager.addOnPageChangeListener(this);
     }
@@ -91,6 +95,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         View page_01 = View.inflate(MainActivity.this, R.layout.page_01, null);
         View page_02 = View.inflate(MainActivity.this, R.layout.page_02, null);
         View page_03 = View.inflate(MainActivity.this, R.layout.page_03, null);
+
+        tv_search_input = page_01.findViewById(R.id.tv_search_input);
+
         views = new ArrayList<View>();
         views.add(page_01);
         views.add(page_02);
@@ -122,6 +129,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent=new Intent(MainActivity.this,MyCenterActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.tv_search_input :
+                Toast.makeText(this,"来了",Toast.LENGTH_LONG);
+                Intent intent1=new Intent(this,SearchActivity.class);
+                startActivity(intent1);
+                    break;
             default:
                 break;
         }

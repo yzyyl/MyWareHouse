@@ -9,4 +9,5 @@
     <color name="selected">#FA1F40</color>
     <color name="white">#FFFFFF</color>
     <color name="blue">#4169E1</color>
+    <color name="et_search_bg">#ECECEC</color>
 </resources>
