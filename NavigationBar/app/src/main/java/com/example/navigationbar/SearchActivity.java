@@ -42,7 +42,7 @@ public class SearchActivity extends AppCompatActivity {
     private List<SearchItemBean> getData() {
         List<SearchItemBean> list = new ArrayList<SearchItemBean>();
         SearchItemBean searchItemBean = null;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 40; i++) {
             searchItemBean = new SearchItemBean(i, "I am i:" + i);
 
             list.add(searchItemBean);

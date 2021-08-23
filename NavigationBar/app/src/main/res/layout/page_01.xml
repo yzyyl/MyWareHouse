@@ -23,6 +23,6 @@
         android:textSize="16dp"
         android:singleLine="true"
         android:imeOptions="actionSearch"
-        android:layout_marginRight="10dp"/>
+        android:layout_marginRight="0dp"/>
 
 </LinearLayout>
