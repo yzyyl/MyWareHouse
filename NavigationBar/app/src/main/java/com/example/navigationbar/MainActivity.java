@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.tv_search_input :
-                Toast.makeText(this,"来了",Toast.LENGTH_LONG);
+//                Toast.makeText(this,"来了",Toast.LENGTH_LONG);
                 Intent intent1=new Intent(this,SearchActivity.class);
                 startActivity(intent1);
                     break;

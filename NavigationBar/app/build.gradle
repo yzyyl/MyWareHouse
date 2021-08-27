@@ -43,4 +43,8 @@ dependencies {
     //recyclerview 依赖
     implementation 'com.android.support:recyclerview-v7:29+'
 
+    // 添加OKHttp支持
+    implementation("com.squareup.okhttp3:okhttp:4.3.1")
+
+
 }
