@@ -1,6 +1,7 @@
 package com.example.navigationbar.adapter;
 
 import android.content.Context;
+import android.text.SpannableString;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.navigationbar.R;
 import com.example.navigationbar.bean.SearchItemBean;
+import com.example.navigationbar.util.StringFormatUtil;
 
 import java.util.List;
 
@@ -40,7 +42,13 @@ public class RecyclerAdatper extends RecyclerView.Adapter<RecyclerAdatper.MyView
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         SearchItemBean searchItemBean = mylist.get(position);
-        holder.textView.setText(searchItemBean.getText());
+//        holder.textView.setText(searchItemBean.getText());
+
+        SpannableString s= StringFormatUtil.getHighLightKeyWord(R.color.blue,searchItemBean.getText(),mkey);
+            if (s != null)
+                holder.textView.setText(s);
+            else holder.textView.setText(searchItemBean.getText());
+
     }
 //    @Override
 //    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position,List<SearchItemBean> payloads) {

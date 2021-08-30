@@ -33,6 +33,7 @@ import okhttp3.Response;
 public class SearchActivity extends AppCompatActivity {
     private EditText editText;//输入框
     private RecyclerView recyclerView;//
+    private Context context = SearchActivity.this;
     private List<SearchItemBean> searchItemBeanList;//集合
     private List<SearchItemBean> list;
     private RecyclerAdatper mAdapter;//
@@ -61,11 +62,11 @@ public class SearchActivity extends AppCompatActivity {
     private void initrecyclerview(List<SearchItemBean> list, String key) {
         if (list == null || list.size() == 0)
             return;
-        searchItemBeanList.clear();
-        searchItemBeanList.addAll(list);
+//        searchItemBeanList.clear();
+//        searchItemBeanList.addAll(list);
         mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new RecyclerAdatper(this, searchItemBeanList, key);
+        mAdapter = new RecyclerAdatper(this, list, key);
         mAdapter.notifyDataSetChanged();
         recyclerView.setAdapter(mAdapter);
     }
@@ -88,8 +89,7 @@ public class SearchActivity extends AppCompatActivity {
 //                Log.i(TAG, "afterTextChanged: 输入结束执行该方法");
                 Toast.makeText(SearchActivity.this, "dfds", Toast.LENGTH_SHORT).show();
                 synchro();
-                list = readJSONContent(mContent);
-                initrecyclerview(list, key);
+
             }
         });
 
@@ -154,16 +154,13 @@ public class SearchActivity extends AppCompatActivity {
                 try {
                     Response response = okHttpClient.newCall(request).execute();//执行请求
                     mContent = response.body().string();//得到返回响应，注意response.body().string() 只能调用一次！
-
-//                    runOnUiThread(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            Toast.makeText(SearchActivity.this,"aaa", Toast.LENGTH_SHORT).show();
                     list = readJSONContent(mContent);
-//
-//
-//                        }
-//                    });
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            initrecyclerview(list, key);
+                        }
+                    });
                 } catch (IOException e) {
                     e.printStackTrace();
                     Log.e("OkHttpActivity", e.toString());
