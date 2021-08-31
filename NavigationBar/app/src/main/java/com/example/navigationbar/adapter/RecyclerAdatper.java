@@ -1,5 +1,6 @@
 package com.example.navigationbar.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.SpannableString;
 import android.view.LayoutInflater;
@@ -43,8 +44,8 @@ public class RecyclerAdatper extends RecyclerView.Adapter<RecyclerAdatper.MyView
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         SearchItemBean searchItemBean = mylist.get(position);
 //        holder.textView.setText(searchItemBean.getText());
-
-        SpannableString s= StringFormatUtil.getHighLightKeyWord(R.color.blue,searchItemBean.getText(),mkey);
+//不太懂
+        @SuppressLint("ResourceType") SpannableString s= StringFormatUtil.getHighLightKeyWord(context.getString(R.color.babyblue),searchItemBean.getText(),mkey);
             if (s != null)
                 holder.textView.setText(s);
             else holder.textView.setText(searchItemBean.getText());

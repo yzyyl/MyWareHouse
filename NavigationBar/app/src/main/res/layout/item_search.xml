@@ -12,7 +12,8 @@
         android:layout_height="20dp"
         android:layout_gravity="center_vertical"
         android:layout_centerVertical="true"
-        android:background="@drawable/sousuo" />
+        android:scaleType="centerCrop"
+        android:background="@drawable/search" />
 
     <TextView
         android:id="@+id/tv_search_item"
@@ -21,6 +22,7 @@
         android:layout_centerVertical="true"
         android:layout_marginTop="25dp"
         android:layout_toRightOf="@id/iv_search_item"
+        android:layout_toLeftOf="@id/iv_search_item2"
         android:gravity="center_vertical"
         android:text="设置中心"
         android:textSize="17sp"  />
@@ -29,8 +31,9 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_gravity="center"
+        android:scaleType="centerCrop"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/head"/>
+        android:background="@drawable/arrows"/>
 
 </RelativeLayout>
